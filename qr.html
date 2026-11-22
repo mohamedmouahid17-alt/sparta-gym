@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPARTA GYM - QR Code</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #080808;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .qr-container {
+      width: 100%;
+      max-width: 420px;
+      background: #111;
+      border: 2px solid #f2c94c;
+      border-radius: 18px;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      color: #f2c94c;
+      font-size: 30px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: white;
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .qr-box {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    #qrcode {
+      width: 220px;
+      height: 220px;
+    }
+
+    #qrcode img,
+    #qrcode canvas {
+      width: 220px !important;
+      height: 220px !important;
+    }
+
+    .scan-text {
+      color: #f2c94c;
+      font-size: 19px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      color: #ccc;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .line {
+      width: 70px;
+      height: 3px;
+      background: #f2c94c;
+      margin: 20px auto;
+    }
+
+    .footer {
+      color: #777;
+      font-size: 11px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="qr-container">
+
+    <img src="sparta-logo.jpg" alt="SPARTA GYM Logo" class="logo">
+
+    <h1>SPARTA GYM</h1>
+
+    <p class="subtitle">MARTIL</p>
+
+    <div class="line"></div>
+
+    <div class="qr-box">
+      <div id="qrcode"></div>
+    </div>
+
+    <p class="scan-text">SCAN TO EXPLORE SPARTA GYM</p>
+
+    <p class="description">
+      Opening Hours • Contact • Reviews
+    </p>
+
+    <p class="footer">
+      © SPARTA GYM MARTIL
+    </p>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <script>
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://aquamarine-muffin366049.netlify.app",
+      width: 220,
+      height: 220,
+      colorDark: "#080808",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+
+</body>
+</html>

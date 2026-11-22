@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <title>GYM SPARTA | Fitness Club</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo">GYM <span>SPARTA</span></div>
+    <a href="#reviews" class="header-btn">Reviews</a>
+  </header>
+
+  <main>
+
+    <section class="hero">
+    <img src="/SPARTA-LOGO-JPG.jpeg"
+     alt="SPARTA GYM MARTIL"
+     class="hero-logo">
+      <p class="subtitle">WELCOME TO</p>
+      <h1>GYM <span>SPARTA</span></h1>
+      <p class="hero-text">
+        TRAIN HARD. STAY STRONG.
+      </p>
+      <a href="#hours" class="main-btn">DISCOVER MORE</a>
+    </section>
+
+    <section class="section" id="hours">
+      <p class="subtitle">VISIT US</p>
+      <h2>Opening <span>Hours</span></h2>
+
+      <div class="hours-card">
+        <div class="hour-row">
+          <span>Monday - Saturday</span>
+          <strong>08:00 - 23:00</strong>
+        </div>
+        <div class="hour-row">
+          <span>Sunday</span>
+          <strong>Closed</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <p class="subtitle">YOUR OPINION MATTERS</p>
+      <h2>Customer <span>Reviews</span></h2>
+
+      <div id="reviews-list"></div>
+
+      <div class="review-form">
+        <h3>Write a Review</h3>
+
+        <input id="review-name"
+          type="text"
+          placeholder="Your name">
+
+        <select id="review-rating">
+          <option value="5">★★★★★ - Excellent</option>
+          <option value="4">★★★★ - Very good</option>
+          <option value="3">★★★ - Good</option>
+          <option value="2">★★ - Fair</option>
+          <option value="1">★ - Poor</option>
+        </select>
+
+        <textarea id="review-text"
+          placeholder="Write your experience..."></textarea>
+
+        <button id="submit-review">
+          SUBMIT REVIEW
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <h3>GYM <span>SPARTA</span></h3>
+    <p>TRAIN HARD. STAY STRONG.</p>
+    <p>© 2026 GYM SPARTA</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
