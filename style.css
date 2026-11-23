@@ -307,3 +307,12 @@ footer p {
   gap: 10px;
   flex-wrap: wrap;
 }
+.hour-row span:first-child {
+  color: #D6AD55;
+  font-weight: 700;
+}
+
+.hour-row span:last-child {
+  color: #FFFFFF;
+  font-weight: 500;
+}
