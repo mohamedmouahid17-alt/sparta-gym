@@ -230,11 +230,80 @@ footer p {
   }
 }
 .hero-logo {
-  width: 220px;
-  height: 220px;
+  width: 180px !important;
+  height: 180px !important;
   object-fit: contain;
-  border-radius: 50%;
-  margin-bottom: 25px;
-  border: 3px solid #f2c94c;
-  box-shadow: 0 0 25px #f2c94c55;
+  display: block;
+  margin: 0 auto 25px;
+}
+
+@media (max-width: 600px) {
+  .hero-logo {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+@media (max-width: 600px) {
+  .hero-logo {
+    display: block !important;
+    width: 45px !important;
+    height: 45px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    object-fit: contain;
+  }
+}
+  .hours-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.hours-group {
+  background: #111;
+  border: 1px solid #c9a44c;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.hours-group h3 {
+  color: #c9a44c;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+  .hours-container {
+    grid-template-columns: 1fr;
+  }
+}
+.hours-group {
+  height: fit-content;
+  align-self: start;
+}
+
+.hours-group .hour-row {
+  padding: 12px 0;
+}
+#ramadan {
+  border-top: 1px solid #c9a44c;
+  padding-top: 60px;
+}
+
+#ramadan .hours-group {
+  height: fit-content;
+  align-self: start;
+}
+
+#ramadan .hours-group h3 {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#ramadan .hour-row {
+  gap: 10px;
+  flex-wrap: wrap;
 }
