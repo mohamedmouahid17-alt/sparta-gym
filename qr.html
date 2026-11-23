@@ -1,145 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPARTA GYM - QR Code</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPARTA GYM MARTIL - Google Reviews QR</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #171717;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.poster {
+    width: 100%;
+    max-width: 950px;
+    min-height: 680px;
+    background: linear-gradient(145deg, #111, #050505);
+    border: 2px solid #c9a34e;
+    outline: 1px solid #c9a34e;
+    outline-offset: -12px;
+    padding: 45px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+    margin: 0 auto 12px;
+    display: block;
+}
+
+.brand {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 6px;
+}
+
+.brand span {
+    color: #c9a34e;
+}
+
+.location {
+    color: #c9a34e;
+    letter-spacing: 7px;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.gold-line {
+    width: 90px;
+    height: 2px;
+    background: #c9a34e;
+    margin: 20px auto;
+}
+
+.google-title {
+    font-size: 27px;
+    letter-spacing: 3px;
+    color: white;
+}
+
+.google-title span {
+    color: #c9a34e;
+}
+
+.google-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.google-g {
+    font-size: 35px;
+    font-weight: bold;
+    background: conic-gradient(
+        #4285F4 0deg 90deg,
+        #34A853 90deg 180deg,
+        #FBBC05 180deg 250deg,
+        #EA4335 250deg 310deg,
+        #4285F4 310deg
+    );
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.stars {
+    color: #e0b653;
+    font-size: 42px;
+    letter-spacing: 8px;
+    margin: 12px 0 8px;
+    text-shadow: 0 0 12px rgba(201,163,78,.25);
+}
+
+.review-text {
+    color: #aaa;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.scan-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 25px auto;
+}
+
+.scan-box,
+.qr-box {
+    width: 265px;
+    height: 265px;
+    border: 1.5px solid #c9a34e;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scan-box {
+    background: #111;
+    padding: 18px;
+}
+
+.phone-icon {
+    width: 100px;
+    height: 115px;
+    margin-bottom: 14px;
+}
+
+.scan-box h3 {
+    color: #c9a34e;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.scan-box p {
+    color: #aaa;
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.qr-box {
+    background: white;
+    padding: 15px;
+}
+
+#qrcode {
+    width: 230px;
+    height: 230px;
+}
+
+#qrcode img,
+#qrcode canvas {
+    width: 230px !important;
+    height: 230px !important;
+    display: block;
+}
+
+.footer {
+    color: #c9a34e;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.print-btn {
+    margin-top: 25px;
+    background: #c9a34e;
+    color: #080808;
+    border: none;
+    padding: 14px 35px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+@media(max-width:650px) {
+    body {
+        padding: 10px;
+    }
+
+    .poster {
+        min-height: auto;
+        padding: 40px 18px;
+    }
+
+    .brand {
+        font-size: 30px;
+    }
+
+    .google-title {
+        font-size: 21px;
+    }
+
+    .stars {
+        font-size: 35px;
+    }
+
+    .scan-area {
+        flex-direction: column;
+    }
+}
+
+@media print {
+    @page {
+        size: A4 landscape;
+        margin: 0;
     }
 
     body {
-      min-height: 100vh;
-      background: #080808;
-      color: white;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+        background: white;
+        padding: 0;
+        min-height: auto;
     }
 
-    .qr-container {
-      width: 100%;
-      max-width: 420px;
-      background: #111;
-      border: 2px solid #f2c94c;
-      border-radius: 18px;
-      padding: 30px 20px;
-      text-align: center;
+    .poster {
+        width: 297mm;
+        height: 210mm;
+        max-width: none;
+        min-height: 0;
+        margin: 0;
+        padding: 17mm;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
     }
 
-    .logo {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      margin-bottom: 15px;
+    .print-btn {
+        display: none;
     }
-
-    h1 {
-      color: #f2c94c;
-      font-size: 30px;
-      letter-spacing: 3px;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      color: white;
-      font-size: 13px;
-      letter-spacing: 2px;
-      margin-bottom: 25px;
-    }
-
-    .qr-box {
-      background: white;
-      padding: 15px;
-      border-radius: 12px;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-
-    #qrcode {
-      width: 220px;
-      height: 220px;
-    }
-
-    #qrcode img,
-    #qrcode canvas {
-      width: 220px !important;
-      height: 220px !important;
-    }
-
-    .scan-text {
-      color: #f2c94c;
-      font-size: 19px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    .description {
-      color: #ccc;
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .line {
-      width: 70px;
-      height: 3px;
-      background: #f2c94c;
-      margin: 20px auto;
-    }
-
-    .footer {
-      color: #777;
-      font-size: 11px;
-      margin-top: 20px;
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <div class="qr-container">
+<div class="poster">
 
-    <h1>SPARTA GYM</h1>
+    <header>
+        <!-- Logo file: sparta-logo.png -->
+        <img src="sparta-logo.png"
+             alt="SPARTA GYM Logo"
+             class="logo"
+             onerror="this.style.display='none'">
 
-    <p class="subtitle">MARTIL</p>
+        <h1 class="brand">SPARTA <span>GYM</span></h1>
+        <p class="location">MARTIL</p>
 
-    <div class="line"></div>
+        <div class="gold-line"></div>
 
-    <div class="qr-box">
-      <div id="qrcode"></div>
-    </div>
+        <h2 class="google-title">
+            GOOGLE <span>REVIEWS</span>
+        </h2>
 
-    <p class="scan-text">SCAN TO EXPLORE SPARTA GYM</p>
+        <div class="google-logo">
+            <span class="google-g">G</span>
+            <span>Google Reviews</span>
+        </div>
 
-    <p class="description">
-      Opening Hours • Contact • Reviews
-    </p>
+        <div class="stars">★★★★★</div>
 
-    <p class="footer">
-      © SPARTA GYM MARTIL
-    </p>
+        <p class="review-text">
+            YOUR OPINION MATTERS TO US
+        </p>
+    </header>
 
-  </div>
+    <main class="scan-area">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+        <div class="scan-box">
 
-  <script>
-    new QRCode(document.getElementById("qrcode"), {
-      text: "https://mohamedmouahid17-alt.github.io/sparta-gym/",
-      width: 220,
-      height: 220,
-      colorDark: "#080808",
-      colorLight: "#ffffff",
-      correctLevel: QRCode.CorrectLevel.H
-    });
-  </script>
+            <svg class="phone-icon" viewBox="0 0 110 130"
+                 fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                <rect x="28" y="5" width="54" height="112"
+                      rx="9" stroke="#c9a34e" stroke-width="4"/>
+
+                <line x1="43" y1="15" x2="67" y2="15"
+                      stroke="#c9a34e" stroke-width="3"
+                      stroke-linecap="round"/>
+
+                <circle cx="55" cy="105" r="3" fill="#c9a34e"/>
+
+                <path d="M5 35V12H28 M82 12H105V35
+                         M5 95V118H28 M82 118H105V95"
+                      stroke="#c9a34e" stroke-width="4"
+                      stroke-linecap="round"/>
+
+                <path d="M43 55L55 43L67 55M55 43V75"
+                      stroke="#c9a34e" stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
+
+            <h3>SCAN TO CONNECT</h3>
+            <p>SCAN WITH YOUR PHONE CAMERA</p>
+
+        </div>
+
+        <div class="qr-box">
+            <div id="qrcode"></div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        TRAIN HARD • STAY STRONG
+    </footer>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">
+    PRINT POSTER
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+const destination =
+"https://mohamedmouahid17-alt.github.io/sparta-gym/";
+
+new QRCode(document.getElementById("qrcode"), {
+    text: destination,
+    width: 230,
+    height: 230,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+});
+</script>
 
 </body>
 </html>
