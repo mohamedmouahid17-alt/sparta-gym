@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPARTA GYM MARTIL</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    background:#080808;
+    color:white;
+    font-family:Arial,sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+.container{
+    width:100%;
+    max-width:440px;
+    text-align:center;
+    padding:40px 25px;
+    border:2px solid #c9a34e;
+    background:linear-gradient(145deg,#151515,#050505);
+    box-shadow:0 0 25px #000;
+}
+.logo{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+h1{
+    font-size:34px;
+    letter-spacing:4px;
+}
+h1 span{color:#c9a34e}
+.location{
+    color:#c9a34e;
+    letter-spacing:6px;
+    margin-top:8px;
+}
+.line{
+    width:75px;
+    height:2px;
+    background:#c9a34e;
+    margin:25px auto;
+}
+.subtitle{
+    color:#aaa;
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:25px;
+}
+.option{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:18px;
+    margin:15px 0;
+    border:1px solid #c9a34e;
+    border-radius:9px;
+    color:white;
+    text-decoration:none;
+    background:#111;
+    transition:.2s;
+}
+.option:hover{
+    background:#242016;
+}
+.option-icon{
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:27px;
+}
+.option-text{
+    text-align:left;
+}
+.option-text strong{
+    display:block;
+    color:#c9a34e;
+    font-size:16px;
+    letter-spacing:1px;
+}
+.option-text small{
+    display:block;
+    color:#aaa;
+    margin-top:6px;
+    font-size:11px;
+}
+.google-g{
+    font-size:34px;
+    font-weight:bold;
+    background:conic-gradient(
+        #4285F4 0deg 90deg,
+        #34A853 90deg 180deg,
+        #FBBC05 180deg 250deg,
+        #EA4335 250deg 310deg,
+        #4285F4 310deg
+    );
+    color:transparent;
+    background-clip:text;
+    -webkit-background-clip:text;
+}
+.stars{
+    color:#e0b653;
+    font-size:22px;
+    letter-spacing:4px;
+    margin:15px 0;
+}
+.footer{
+    color:#c9a34e;
+    font-size:11px;
+    letter-spacing:3px;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="sparta-logo.png" class="logo"
+         alt="SPARTA GYM Logo"
+         onerror="this.style.display='none'">
+
+    <h1>SPARTA <span>GYM</span></h1>
+    <p class="location">MARTIL</p>
+
+    <div class="line"></div>
+
+    <p class="subtitle">CONNECT WITH US</p>
+
+    <a class="option"
+       href="https://www.instagram.com/sparta.gym.martil/"
+       target="_blank">
+        <div class="option-icon">◎</div>
+        <div class="option-text">
+            <strong>INSTAGRAM</strong>
+            <small>FOLLOW OUR GYM</small>
+        </div>
+    </a>
+
+    <a class="option" href="#reviews">
+        <div class="option-icon google-g">G</div>
+        <div class="option-text">
+            <strong>GOOGLE REVIEWS</strong>
+            <small>SHARE YOUR EXPERIENCE</small>
+        </div>
+    </a>
+
+    <div class="stars">★★★★★</div>
+
+    <div id="reviews">
+        <p style="color:#c9a34e;font-size:13px">
+            THANK YOU FOR YOUR SUPPORT
+        </p>
+        <p style="color:#aaa;font-size:11px;margin-top:8px">
+            SPARTA GYM MARTIL
+        </p>
+    </div>
+
+    <div class="footer">
+        TRAIN HARD • STAY STRONG
+    </div>
+
+</div>
+
+</body>
+</html>
